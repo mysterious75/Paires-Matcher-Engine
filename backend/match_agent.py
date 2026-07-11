@@ -58,7 +58,7 @@ class MatchAgent:
         return self._general_vc_template
     
     def _general_vc_template(self, **kwargs) -> str:
-        return f"""Hi {{investment_partner}},
+        return f"""Hi {kwargs.get('investment_partner', 'Partner')},
 
 I'm writing to introduce you to {kwargs.get('company')}, a company I believe aligns well with {kwargs.get('investor_name')}'s investment focus.
 
