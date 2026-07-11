@@ -30,7 +30,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 # Initialize
 engine = MatcherEngine()
@@ -179,7 +179,7 @@ async def generate_outreach(founder_id: str, investor_id: str):
     return {
         "match_score": match.overall_score,
         "subject": outreach["subject"],
-        "message_body": outreach["body"],
+        "body": outreach["body"],
         "tone": outreach["tone"],
         "key_selling_points": outreach["key_selling_points"],
         "match_details": {
