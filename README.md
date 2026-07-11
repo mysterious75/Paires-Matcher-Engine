@@ -1,5 +1,7 @@
 # Paires Matcher Engine
 
+![Paires Matcher Engine Dashboard](screenshot.png)
+
 Production-level matching engine demo for the **Founding AI Engineer** role at Paires.
 
 This is the **core product** of Paires — the two-sided matching engine that pairs founders with the right investors, plus the agent layer that turns matches into booked meetings.
