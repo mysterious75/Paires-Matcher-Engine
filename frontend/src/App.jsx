@@ -75,8 +75,8 @@ function Overview({ founders, investors, setTab }) {
   return (
     <div>
       <div className="hero">
-        <h1>Matching Engine</h1>
-        <p>The core of Paires. Multi-factor scoring connects founders with the right investors, then agents turn matches into meetings.</p>
+        <h1>Matching Engine v2</h1>
+        <p>Real embeddings + SQLite. Semantic similarity as the primary scoring factor.</p>
         <div className="hero-stats">
           <div><div className="hero-stat-num">{founders.length}</div><div className="hero-stat-label">Founders</div></div>
           <div><div className="hero-stat-num">{investors.length}</div><div className="hero-stat-label">Investors</div></div>
@@ -99,11 +99,11 @@ function Overview({ founders, investors, setTab }) {
         <div className="section">
           <div className="section-title">Scoring dimensions</div>
           <div className="weights-grid">
-            <div className="weight-item"><div className="weight-pct">35%</div><div className="weight-name">Sector</div></div>
-            <div className="weight-item"><div className="weight-pct">20%</div><div className="weight-name">Stage</div></div>
-            <div className="weight-item"><div className="weight-pct">15%</div><div className="weight-name">Geography</div></div>
-            <div className="weight-item"><div className="weight-pct">15%</div><div className="weight-name">Check Size</div></div>
-            <div className="weight-item"><div className="weight-pct">15%</div><div className="weight-name">Description</div></div>
+            <div className="weight-item"><div className="weight-pct">40%</div><div className="weight-name">Embeddings</div></div>
+            <div className="weight-item"><div className="weight-pct">25%</div><div className="weight-name">Sector</div></div>
+            <div className="weight-item"><div className="weight-pct">15%</div><div className="weight-name">Stage</div></div>
+            <div className="weight-item"><div className="weight-pct">10%</div><div className="weight-name">Geography</div></div>
+            <div className="weight-item"><div className="weight-pct">10%</div><div className="weight-name">Check Size</div></div>
           </div>
         </div>
 
@@ -162,6 +162,7 @@ function Founders({ founders, selected, matchFounder, matches, genOutreach, outr
                         <div className="match-bar"><div className="match-bar-label"><span>Stage</span><span>{(m.stage_score*100).toFixed(0)}%</span></div><div className="match-bar-track"><div className="match-bar-fill blue" style={{width:`${m.stage_score*100}%`}}></div></div></div>
                         <div className="match-bar"><div className="match-bar-label"><span>Geo</span><span>{(m.geography_score*100).toFixed(0)}%</span></div><div className="match-bar-track"><div className="match-bar-fill purple" style={{width:`${m.geography_score*100}%`}}></div></div></div>
                         <div className="match-bar"><div className="match-bar-label"><span>Check</span><span>{(m.check_size_score*100).toFixed(0)}%</span></div><div className="match-bar-track"><div className="match-bar-fill amber" style={{width:`${m.check_size_score*100}%`}}></div></div></div>
+                        <div className="match-bar"><div className="match-bar-label"><span>Embedding</span><span>{(m.embedding_score*100).toFixed(0)}%</span></div><div className="match-bar-track"><div className="match-bar-fill green" style={{width:`${m.embedding_score*100}%`}}></div></div></div>
                       </div>
                     </div>
                     <div className="match-score">{(m.overall_score*100).toFixed(0)}%</div>
