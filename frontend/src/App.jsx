@@ -419,7 +419,7 @@ function EvalsTab() {
               <div className="distribution">
                 <div className="dist-bar high"><div className="dist-fill" style={{width: `${(evals.score_distribution.high || 0) * 10}%`}}></div><span>High (≥70%): {evals.score_distribution.high || 0}</span></div>
                 <div className="dist-bar med"><div className="dist-fill" style={{width: `${(evals.score_distribution.medium || 0) * 10}%`}}></div><span>Medium (40-70%): {evals.score_distribution.medium || 0}</span></div>
-                <div className="dist-bar low"><div className="dist-fill" style={{width: `${(evals.score_distribution.low || 0) * 10}%`}}></div><span>Low (<40%): {evals.score_distribution.low || 0}</span></div>
+                <div className="dist-bar low"><div className="dist-fill" style={{width: `${(evals.score_distribution.low || 0) * 10}%`}}></div><span>{'<40%'}: {evals.score_distribution.low || 0}</span></div>
               </div>
             </div>
           </div>
